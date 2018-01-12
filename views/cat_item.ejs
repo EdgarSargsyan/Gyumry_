@@ -1,0 +1,63 @@
+<% layout("layout") -%>
+
+
+    <div class="categ">
+        <h1>
+            <%= category['categories_item_name'] %>
+        </h1>
+        <% for(var i in category.categories_item_state){ %>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3>
+                            <%= category.categories_item_state[`${i}`].title %>
+                        </h3>
+                        <p>
+                            <%= category.categories_item_state[`${i}`].content %>
+                        </p>
+                        <a href="#" class="readMore">Read more</a>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="/img/gyumri3.jpg" width="100%" alt="pic">
+                    </div>
+                </div>
+
+            </div>
+            <% } %>
+    </div>
+    <div id="pages">
+        <nav aria-label="Page  example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="pg page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#">6</a>
+                </li>
+                <li class="page-item">
+                    <a class="pg page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
