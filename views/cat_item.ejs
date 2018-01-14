@@ -2,28 +2,25 @@
 
 
     <div class="categ">
-        <h1>
-            <%= category['categories_item_name'] %>
-        </h1>
-        <% for(var i in category.categories_item_state){ %>
+        <% doc.forEach((each) => { %>
             <div class="item">
                 <div class="row">
                     <div class="col-md-9">
                         <h3>
-                            <%= category.categories_item_state[`${i}`].title %>
+                            <%= each.Title %>
                         </h3>
                         <p>
-                            <%= category.categories_item_state[`${i}`].content %>
+                            <%= each.Content %>
                         </p>
-                        <a href="#" class="readMore">Read more</a>
+                        <a class="readMore" href=<%= each.Href %> >Read more</a>
                     </div>
                     <div class="col-md-3">
-                        <img src="/img/gyumri3.jpg" width="100%" alt="pic">
+                        <img width="100%" alt="pic"  src=<%= each.Photo1 %> >
                     </div>
                 </div>
 
             </div>
-            <% } %>
+            <% }) %>
     </div>
     <div id="pages">
         <nav aria-label="Page  example">

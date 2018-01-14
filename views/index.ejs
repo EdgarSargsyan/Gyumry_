@@ -27,162 +27,20 @@
         </a>
     </div>
 
-    <h1><%= err %></h1>
-    <div class="content container-fluid">
-        <div class="row">
-            <div class="categores col-md-9">
-
-                <div class="row">
-                    <div class="catItems  col-md-5 ml-auto">
-                        <img src="/img/oldAndNew.jpg" alt="">
-                        <h3>
-                            <%= category.categories_item1.categories_item_name %>
-                        </h3>
-                        <div class="catHover">
-                            <a href="/category/oldandnew" class="more btn btn-lg" role="button">More</a>
-                        </div>
-                    </div>
-                    <div class="catItems  col-md-5 ml-auto">
-                        <img src="/img/churches.jpg " alt="churches">
-                        <h3>
-                            <%= category.categories_item6.categories_item_name %>
-                        </h3>
-                        <div class="catHover">
-                            <a href="#" class="more btn btn-lg" role="button">More</a>
-                        </div>
+   
+    <div class="content container">
+        <div class="categores">
+            <% cat.forEach((each) => { %>
+                <div class="catItems">
+                    <img src=<%= each.Photo %> >
+                    <h3>
+                        <%= each.Name %>
+                    </h3>
+                    <div class="catHover">
+                        <a class="more btn btn-lg" role="button" href=<%= each.Link %> >More</a>
                     </div>
                 </div>
-                <br />
-                <div class="row">
-                    <div class=" catItems col-md-5 ml-auto">
-                        <img src="/img/famous.jpg" alt="">
-                        <h3>
-                            <%= category.categories_item3.categories_item_name %>
-                        </h3>
-                        <div class="catHover">
-                            <a href="#" class="more btn btn-lg" role="button">More</a>
-                        </div>
-                    </div>
-                    <div class="catItems col-md-5 ml-auto">
-                        <img src="/img/hotel.jpg" alt="">
-                        <h3>
-                            <%= category.categories_item4.categories_item_name %>
-                        </h3>
-                        <div class="catHover">
-                            <a href="#" class="more btn btn-lg" role="button">More</a>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="catItems col-md-5 ml-auto">
-                        <img src="/img/tea.jpg" alt="">
-                        <h3>
-                            <%= category.categories_item2.categories_item_name %>
-                        </h3>
-                        <div class="catHover">
-                            <a href="#" class="more btn btn-lg" role="button">More</a>
-                        </div>
-                    </div>
-                    <div class="catItems col-md-5 ml-auto">
-                        <img src="/img/traditions.jpg" alt="">
-                        <h3>
-                            <%= category.categories_item5.categories_item_name %>
-                        </h3>
-                        <div class="catHover">
-                            <a href="#" class="more btn btn-lg" role="button">More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="sidebar ">
-                    <ul id="outer">
-                        <li id="li1">
-                            <%= category.categories_item1.categories_item_name %>
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                <ul id="drop1">
-                                    <% for(var i in category.categories_item1.categories_item_state){ %>
-                                        <li>
-                                            <a href="#">
-                                                <%= category.categories_item1.categories_item_state[`${i}`].title %>
-                                            </a>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                        </li>
-
-                        <li id="li2">
-                            <%= category.categories_item6.categories_item_name %>
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                <ul id="drop1">
-                                    <% for(var i in category.categories_item2.categories_item_state){ %>
-                                        <li>
-                                            <a href="#">
-                                                <%= category.categories_item2.categories_item_state[`${i}`].title %>
-                                            </a>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                        </li>
-                        <li id="li3">
-                            <%= category.categories_item3.categories_item_name %>
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                <ul id="drop1">
-                                    <% for(var i in category.categories_item3.categories_item_state){ %>
-                                        <li>
-                                            <a href="#">
-                                                <%= category.categories_item3.categories_item_state[`${i}`].title %>
-                                            </a>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                        </li>
-
-                        <li id="li4">
-                            <%= category.categories_item4.categories_item_name %>
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                <ul id="drop1">
-                                    <% for(var i in category.categories_item4.categories_item_state){ %>
-                                        <li>
-                                            <a href="#">
-                                                <%= category.categories_item4.categories_item_state[`${i}`].title %>
-                                            </a>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                        </li>
-
-                        <li id="li5">
-                            <%= category.categories_item2.categories_item_name %>
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                <ul id="drop1">
-                                    <% for(var i in category.categories_item5.categories_item_state){ %>
-                                        <li>
-                                            <a href="#">
-                                                <%= category.categories_item5.categories_item_state[`${i}`].title %>
-                                            </a>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                        </li>
-                        <li id="li6">
-                            <%= category.categories_item5.categories_item_name %>
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                <ul id="drop1">
-                                    <% for(var i in category.categories_item6.categories_item_state){ %>
-                                        <li>
-                                            <a href="#">
-                                                <%= category.categories_item6.categories_item_state[`${i}`].title %>
-                                            </a>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
+                <% }) %>
         </div>
+
     </div>

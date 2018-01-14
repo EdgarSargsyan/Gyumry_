@@ -6,7 +6,7 @@
     <meta name="author" content="EdgarSargysn">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
-        <%= title%>
+        <%= title %>
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
@@ -18,7 +18,7 @@
 
     <nav id='topMenu' class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a id="logo" class="navbar-brand" href="#">
+            <a id="logo" class="navbar-brand" href="/">
                 <img src="/img/logo.png" alt="logo" width="70%">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -28,24 +28,24 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/">
                             <%= menu.Home %>
                                 <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Users News
+                        <a class="nav-link" href="/users/news">
+                            <%= menu.UNews %>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/about">
                             <%= menu.About %>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <%= menu.Contact %>
+                            <%= menu.Contact%>
                         </a>
                     </li>
                     <% if(user_id == null) {%>
@@ -66,12 +66,14 @@
 
                                     <% if(user_id) {%>
                                         <li class="topBtn nav-item">
-                                            <a href="/users/exit" id="logOut" class="btn btn-md ">LogOut</a>
+                                            <a href="/users/exit" id="logOut" class="btn btn-md ">
+                                                <%= menu.LogOut %>
+                                            </a>
                                         </li>
                                         <% } %>
                                             <% if(user_id) {%>
                                                 <li class="topBtn nav-item">
-                                                    <button id="addNews" class="btn btn-md ">+ Add News</button>
+                                                    <button id="addNews" class="btn btn-md "><%= menu.News %></button>
                                                 </li>
                                                 <% } %>
                                                     <li id="lang" class=" nav-item">
@@ -118,7 +120,7 @@
                 <br>
             </div>
             <button id="send">
-                <%= menu.Sign_Up%>
+                <%= menu.Sign_Up %>
             </button>
         </form>
     </div>
@@ -139,7 +141,7 @@
                 <br>
             </div>
             <button id="login">
-                <%= menu.Sign_In%>
+                <%= menu.Sign_In %>
             </button>
         </form>
     </div>
@@ -151,25 +153,23 @@
         <p id='addErr'>
         </p>
         <form method="post">
-            <div class="row">
-                <div class="col-md-9">
+                <div >
                     <input id="newsTitle" type="text" required placeholder="Title" autocomplete="off">
                 </div>
-                <div class="col-md-3">
-                    <input id="uploadFile" type="file">
-                </div>
-            </div>
             <div>
                 <textarea name="content" id="newsContent" cols="80" rows="15" placeholder="News content ..."></textarea>
             </div>
 
             <button id="add">
-                Add News
+               <%= menu.News %>
             </button>
         </form>
     </div>
-
-
+        <div class="err container">
+            <h2>
+                <%= err %>
+            </h2>
+        </div>
 
     <button class="btnTop btn btn-sm">
         <i class="fa fa-angle-up fa-3x" aria-hidden="true"></i>

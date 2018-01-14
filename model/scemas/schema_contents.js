@@ -2,196 +2,150 @@ const db = require('../db');
 const mongoosePaginate = require('mongoose-paginate');
 
 
-const Schemas = new db.Schema({
-  menu: {
-    menu_item_en: {
-      type: Object,
-      charset: "UTF8"
-    },
-    menu_item_ru: {
-      type: Object,
-      charset: "UTF8"
-    },
-    menu_item_hy: {
-      type: Object,
-      charset: "UTF8"
-    }
+/////////////////////
+//  Menu schema ////
+////////////////////
+
+
+const MenuSchema = new db.Schema({
+  Sign_In: {
+    type: String,
+    charset: "UTF8"
   },
-  category: {
-    categories_en: {
-      categories_item1: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item2: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item3: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item4: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item5: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item6: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      }
-    },
-    categories_ru: {
-      categories_item1: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item2: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item3: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item4: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item5: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item6: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      }
-    },
-    categories_hy: {
-      categories_item1: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item2: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item3: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item4: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item5: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      },
-      categories_item6: {
-        categories_item_name: {
-          type: String
-        },
-        categories_item_state: {
-          type: Object,
-          charset: "UTF8"
-        }
-      }
-    }
+  Contact: {
+    type: String,
+    charset: "UTF8"
+  },
+  News: {
+    type: String,
+    charset: "UTF8"
+  },
+  Sign_Up: {
+    type: String,
+    charset: "UTF8"
+  },
+  Home: {
+    type: String,
+    charset: "UTF8"
+  },
+  About: {
+    type: String,
+    charset: "UTF8"
+  },
+  LogOut: {
+    type: String,
+    charset: "UTF8"
+  },
+  UNews: {
+    type: String,
+    charset: "UTF8"
+  },
+  Lang: {
+    type: String,
+    charset: "UTF8"
+  }
+});
+const Menu = db.model('menu', MenuSchema)
+
+
+/////////////////////
+//  Category schema ////
+////////////////////
+
+const CatSchema = new db.Schema({
+  Name: {
+    type: String,
+    charset: "UTF8"
+  },
+  Photo: {
+    type: String,
+    charset: "UTF8"
+  },
+  Link: {
+    type: String,
+    charset: "UTF8"
+  },
+  Lang: {
+    type: String,
+    charset: "UTF8"
   }
 });
 
-Schemas.plugin(mongoosePaginate);
-const Schema = db.model('content', Schemas);
+const Category = db.model('category', CatSchema)
+
+/////////////////////
+//  content schema ////
+////////////////////
+
+
+const itemSchema = new db.Schema({
+  Title:{
+    type:String,
+    charset:"UTF8"
+  },
+  Content:{
+    type:String,
+    charset:"UTF8"
+  },
+  Photo1:{
+    type:String,
+    charset:"UTF8"
+  },
+  Photo2:{
+    type:String,
+    charset:"UTF8"
+  },
+  Video:{
+    type:String,
+    charset:"UTF8"
+  },
+  CatType:{
+    type:String,
+    charset:"UTF8"
+  },
+  Href:{
+    type:String,
+    charset:"UTF8"
+  },
+  Link:{
+    type:String,
+    charset:"UTF8"
+  },
+  Lang:{
+    type:String,
+    charset:"UTF8"
+  }
+});
+
+const States = db.model('item', itemSchema)
+
+/////////////////////////
+// About  schema    ////
+///////////////////////
+
+const AboutSchema = new db.Schema({
+  Title: {
+    type: String,
+    charset: "UTF8"
+  },
+  Content: {
+    type: String,
+    charset: "UTF8"
+  },
+  Lang: {
+    type: String,
+    charset: "UTF8"
+  }
+});
+
+const About = db.model('about', AboutSchema)
 
 
 
-module.exports = Schema;
+
+module.exports = {
+  Menu: Menu,
+  Category: Category,
+  States: States,
+  About: About
+};
